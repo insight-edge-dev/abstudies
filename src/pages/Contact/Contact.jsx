@@ -9,7 +9,11 @@ import contactItems, { mapEmbedUrl } from './contactData.js';
 
 function ContactPage() {
   return (
-    <PageLayout title="Contact">
+    <PageLayout
+      title="Contact"
+      seoTitle="Contact | AB Studies"
+      seoPath="/contact"
+    >
       <MotionSection className="container-fluid py-5">
         <div className="container py-5">
           <div className="row align-items-center">

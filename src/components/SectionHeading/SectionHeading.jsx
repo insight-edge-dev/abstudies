@@ -21,7 +21,9 @@ function SectionHeading({
       viewport={{ once: true, amount: 0.25 }}
       transition={{ duration: shouldReduceMotion ? 0 : 0.45, ease: 'easeOut' }}
     >
-      <h6 className={eyebrowClassName}>{eyebrow}</h6>
+      <span className={`section-title__eyebrow ${eyebrowClassName}`}>
+        {eyebrow}
+      </span>
       <h2 className="display-4">{title}</h2>
       {description ? (
         <p className={descriptionClassName}>{description}</p>

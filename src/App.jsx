@@ -12,6 +12,7 @@ const CourseDetailsPage = lazy(
 );
 const CoursesPage = lazy(() => import('./pages/Courses/Courses.jsx'));
 const GalleryPage = lazy(() => import('./pages/Gallery/Gallery.jsx'));
+const NotFoundPage = lazy(() => import('./pages/NotFound/NotFound.jsx'));
 const TeamPage = lazy(() => import('./pages/Team/Team.jsx'));
 
 const routes = [
@@ -22,6 +23,7 @@ const routes = [
   { path: '/gallery', Component: GalleryPage },
   { path: '/team', Component: TeamPage },
   { path: '/contact', Component: ContactPage },
+  { path: '*', Component: NotFoundPage },
 ];
 
 function App() {

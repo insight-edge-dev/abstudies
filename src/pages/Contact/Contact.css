@@ -18,7 +18,7 @@
   padding: var(--space-6) !important;
 }
 
-.contact-info-panel h4 {
+.contact-info-panel .h4 {
   margin-bottom: var(--space-2);
   font-size: var(--font-size-lg);
 }

@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 
-function GalleryItem({ image, alt = '' }) {
+function GalleryItem({ image, alt }) {
   const shouldReduceMotion = useReducedMotion();
 
   return (

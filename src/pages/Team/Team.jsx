@@ -4,7 +4,11 @@ import teamPageData from './teamPageData.js';
 
 function TeamPage() {
   return (
-    <PageLayout title="Instructors">
+    <PageLayout
+      title="Instructors"
+      seoTitle="Our Instructors | AB Studies"
+      seoPath="/team"
+    >
       <Teachers items={teamPageData} />
     </PageLayout>
   );

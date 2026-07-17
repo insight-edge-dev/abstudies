@@ -57,9 +57,11 @@
   font-weight: 600;
 }
 
-.about-founder-card h6 {
+.about-founder-card__role {
   margin-bottom: var(--space-3) !important;
   font-size: var(--font-size-sm);
+  font-weight: 500;
+  line-height: 1.4;
 }
 
 .about-founder-card p {

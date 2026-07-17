@@ -9827,7 +9827,7 @@ h6,
   background-attachment: fixed;
 }
 
-.section-title h6::before {
+.section-title__eyebrow::before {
   position: absolute;
   content: "";
   width: 100%;

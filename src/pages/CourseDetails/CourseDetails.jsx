@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Link, useParams } from 'react-router';
 
 import SectionHeading from '../../components/SectionHeading/SectionHeading.jsx';
@@ -14,15 +13,6 @@ function CourseDetailsPage() {
   const { slug } = useParams();
   const course = getCourseDetails(slug);
 
-  useEffect(() => {
-    const previousTitle = document.title;
-    document.title = `${course.title} | AB Studies`;
-
-    return () => {
-      document.title = previousTitle;
-    };
-  }, [course.title]);
-
   return (
     <div className="detail-page">
       <PageLayout
@@ -30,6 +20,8 @@ function CourseDetailsPage() {
         showBreadcrumb={false}
         headerClassName="course-detail__header"
         mainClassName="container py-5"
+        seoTitle={`${course.title} | AB Studies`}
+        seoPath={`/courses/${course.slug}`}
       >
         <div className="row">
           <div className="course-detail__content col-lg-8">

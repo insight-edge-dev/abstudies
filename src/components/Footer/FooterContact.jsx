@@ -1,7 +1,7 @@
 function FooterContact({ contacts, socials }) {
   return (
     <div className="col-md-4 mb-5">
-      <h3 className="text-white mb-4">Get In Touch</h3>
+      <h2 className="footer__heading text-white mb-4">Get In Touch</h2>
       {contacts.map(({ Icon, text }) => (
         <p className="footer__contact-item" key={text}>
           <Icon className="footer__contact-icon mr-2" aria-hidden="true" />

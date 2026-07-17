@@ -11,7 +11,11 @@ import './About.css';
 
 function AboutPage() {
   return (
-    <PageLayout title="About">
+    <PageLayout
+      title="About"
+      seoTitle="About Us | AB Studies"
+      seoPath="/about"
+    >
       <MotionSection className="container-fluid py-5">
         <div className="container py-5">
           <div className="row">

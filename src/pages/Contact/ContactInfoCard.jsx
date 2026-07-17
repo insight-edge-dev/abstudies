@@ -22,7 +22,7 @@ function ContactInfoCard({
         />
       </div>
       <div className="mt-n1">
-        <h4>{title}</h4>
+        <h3 className="h4">{title}</h3>
         <p className="m-0">{value}</p>
       </div>
     </motion.div>

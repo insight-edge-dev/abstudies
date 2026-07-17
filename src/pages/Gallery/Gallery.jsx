@@ -3,7 +3,11 @@ import PageLayout from '../../layouts/PageLayout.jsx';
 
 function GalleryPage() {
   return (
-    <PageLayout title="Gallery">
+    <PageLayout
+      title="Gallery"
+      seoTitle="Gallery | AB Studies"
+      seoPath="/gallery"
+    >
       <Gallery />
     </PageLayout>
   );

@@ -6,7 +6,11 @@ import coursePageItems from './coursePageData.js';
 
 function CoursesPage() {
   return (
-    <PageLayout title="Services">
+    <PageLayout
+      title="Services"
+      seoTitle="Courses | AB Studies"
+      seoPath="/courses"
+    >
       <MotionSection className="container-fluid py-5">
         <div className="container py-5">
           <div className="row mx-0 justify-content-center">
@@ -34,18 +38,25 @@ function CoursesPage() {
                       className="page-link rounded-0"
                       href="#"
                       aria-label="Previous"
+                      aria-disabled="true"
+                      tabIndex="-1"
                     >
                       <span aria-hidden="true">&laquo;</span>
                       <span className="sr-only">Previous</span>
                     </a>
                   </li>
                   <li className="page-item active">
-                    <a className="page-link" href="#">
+                    <a
+                      className="page-link"
+                      href="#"
+                      aria-label="Page 1"
+                      aria-current="page"
+                    >
                       1
                     </a>
                   </li>
                   <li className="page-item">
-                    <a className="page-link" href="#">
+                    <a className="page-link" href="#" aria-label="Page 2">
                       2
                     </a>
                   </li>

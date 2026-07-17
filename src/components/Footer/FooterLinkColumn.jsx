@@ -1,9 +1,10 @@
+import { ChevronRight } from 'lucide-react';
 import { Link } from 'react-router';
 
 function FooterLinkColumn({ title, links }) {
   return (
     <div className="col-md-4 mb-5">
-      <h3 className="text-white mb-4">{title}</h3>
+      <h2 className="footer__heading text-white mb-4">{title}</h2>
       <div className="d-flex flex-column justify-content-start">
         {links.map(({ label, href }, index) => {
           const className = `text-white-50${index < links.length - 1 ? ' mb-2' : ''}`;
@@ -33,4 +34,3 @@ function FooterLinkColumn({ title, links }) {
 }
 
 export default FooterLinkColumn;
-import { ChevronRight } from 'lucide-react';

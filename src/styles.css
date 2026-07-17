@@ -143,7 +143,8 @@ main .row > [class*='col-'] {
   margin-left: auto;
 }
 
-.section-title h6 {
+.section-title__eyebrow {
+  display: inline-block;
   margin-bottom: var(--space-3);
   font-size: var(--font-size-xs);
   font-weight: 700;
@@ -357,7 +358,7 @@ textarea:focus-visible {
     line-height: 1.18;
   }
 
-  .section-title h6 {
+  .section-title__eyebrow {
     font-size: var(--font-size-xs);
     letter-spacing: var(--letter-spacing-label);
   }

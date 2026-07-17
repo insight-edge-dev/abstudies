@@ -19,7 +19,7 @@ function FounderCard({ name, role, description, image, accentClass }) {
         />
         <div>
           <h3 className="h4 mb-1">{name}</h3>
-          <h6 className="text-muted mb-2">{role}</h6>
+          <p className="about-founder-card__role text-muted mb-2">{role}</p>
           <p className="mb-0">{description}</p>
         </div>
       </motion.article>

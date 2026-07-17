@@ -11,7 +11,7 @@
   margin-bottom: 2rem !important;
 }
 
-.detail-page .section-title h6::before {
+.detail-page .section-title__eyebrow::before {
   display: none;
 }
 
