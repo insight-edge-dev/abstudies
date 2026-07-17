@@ -1,0 +1,32 @@
+.course-detail__header {
+  margin-bottom: 2rem;
+}
+
+.related-carousel {
+  position: relative;
+}
+
+.related-carousel__viewport {
+  overflow: hidden;
+}
+
+.related-carousel__track {
+  display: flex;
+  gap: 30px;
+}
+
+.related-course-card {
+  display: block;
+  flex: 0 0 calc((100% - 30px) / 2);
+  overflow: hidden;
+}
+
+.related-carousel .owl-nav button {
+  border: 0;
+}
+
+@media (max-width: 767.98px) {
+  .related-course-card {
+    flex-basis: 100%;
+  }
+}

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 
+import SectionHeading from '../SectionHeading/SectionHeading.jsx';
 import TeacherCard from './TeacherCard.jsx';
 import teachers from './teacherData.js';
 import './Teachers.css';
@@ -103,12 +104,11 @@ function Teachers({ items = teachers }) {
   return (
     <section className="container-fluid py-5">
       <div className="container py-5">
-        <div className="section-title text-center position-relative mb-5">
-          <h6 className="d-inline-block position-relative text-secondary text-uppercase pb-2">
-            Instructors
-          </h6>
-          <h1 className="display-4">Meet Our Instructors</h1>
-        </div>
+        <SectionHeading
+          eyebrow="Instructors"
+          title="Meet Our Instructors"
+          className="text-center position-relative mb-5"
+        />
 
         <div className="teachers-carousel owl-carousel team-carousel position-relative owl-loaded owl-drag">
           <div className="owl-stage-outer">
@@ -116,7 +116,7 @@ function Teachers({ items = teachers }) {
               {visibleTeachers.map((teacher) => (
                 <div
                   className="owl-item teachers-carousel__item"
-                  key={teacher.name}
+                  key={teacher.id ?? teacher.name}
                 >
                   <TeacherCard {...teacher} />
                 </div>

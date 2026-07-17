@@ -1,9 +1,10 @@
 const navigationItems = [
-  { label: 'Home', href: 'index.html' },
-  { label: 'About', href: 'about.html' },
-  { label: 'Services', href: 'course.html' },
-  { label: 'Gallery', href: 'gallery.html' },
-  { label: 'Contact', href: 'contact.html' },
+  { label: 'Home', to: '/' },
+  { label: 'About', to: '/about' },
+  { label: 'Services', to: '/courses' },
+  { label: 'Instructors', to: '/team' },
+  { label: 'Gallery', to: '/gallery' },
+  { label: 'Contact', to: '/contact' },
 ];
 
 export default navigationItems;

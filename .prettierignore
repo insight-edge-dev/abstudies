@@ -1,4 +1,5 @@
 dist
 node_modules
 legacy
+src/assets/styles/style.css
 *.html

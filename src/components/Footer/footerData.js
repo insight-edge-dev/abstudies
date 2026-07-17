@@ -1,10 +1,12 @@
+import { siteContact } from '../../utils/siteContact.js';
+
 export const contactItems = [
   {
     icon: 'fa fa-map-marker-alt',
-    text: 'Maniktala Main Rd, near UCO Bank, Kankurgachi, Kolkata, West Bengal, 700054',
+    text: siteContact.address,
   },
-  { icon: 'fa fa-phone-alt', text: '+918276868778' },
-  { icon: 'fa fa-envelope', text: 'abstudies@gmail.com' },
+  { icon: 'fa fa-phone-alt', text: siteContact.phone },
+  { icon: 'fa fa-envelope', text: siteContact.email },
 ];
 
 export const socialLinks = [
@@ -25,5 +27,5 @@ export const serviceLinks = [
 export const quickLinks = [
   { label: 'Privacy Policy', href: '#' },
   { label: 'Terms & Condition', href: '#' },
-  { label: 'Contact', href: 'contact.html' },
+  { label: 'Contact', href: '/contact' },
 ];

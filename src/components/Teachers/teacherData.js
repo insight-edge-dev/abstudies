@@ -1,8 +1,8 @@
-import teacherOneImage from '../../../legacy/img/team-1.png';
-import teacherTwoImage from '../../../legacy/img/team-2.png';
-import teacherThreeImage from '../../../legacy/img/team-3.png';
-import teacherFourImage from '../../../legacy/img/team-4.png';
-import teacherFiveImage from '../../../legacy/img/team-5.png';
+import teacherOneImage from '../../assets/images/team-1.png';
+import teacherTwoImage from '../../assets/images/team-2.png';
+import teacherThreeImage from '../../assets/images/team-3.png';
+import teacherFourImage from '../../assets/images/team-4.png';
+import teacherFiveImage from '../../assets/images/team-5.png';
 
 const teachers = [
   {

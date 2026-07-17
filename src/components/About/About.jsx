@@ -1,4 +1,4 @@
-import aboutImage from '../../../legacy/img/about.jpg';
+import aboutImage from '../../assets/images/about.jpg';
 import './About.css';
 
 import aboutStats from './aboutStats.js';

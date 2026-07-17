@@ -1,11 +1,11 @@
 import { useState } from 'react';
+import { Link, NavLink } from 'react-router';
 
 import navigationItems from './navigation.js';
 
 function Navbar({
   items = navigationItems,
-  activeHref = 'index.html',
-  brandHref = 'index.html',
+  brandHref = '/',
   brandLabel = 'AB STUDIES',
   joinHref = '',
   joinLabel = 'Join Us',
@@ -20,12 +20,12 @@ function Navbar({
         className="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5"
         aria-label="Primary navigation"
       >
-        <a href={brandHref} className="navbar-brand ml-lg-3">
+        <Link to={brandHref} className="navbar-brand ml-lg-3">
           <h1 className="m-0 text-uppercase text-primary">
             <i className="fa fa-book-reader mr-3" aria-hidden="true"></i>
             {brandLabel}
           </h1>
-        </a>
+        </Link>
         <button
           type="button"
           className="navbar-toggler"
@@ -43,21 +43,19 @@ function Navbar({
           id="navbarCollapse"
         >
           <div className="navbar-nav mx-auto py-0">
-            {items.map(({ label, href }) => {
-              const isActive = href === activeHref;
-
-              return (
-                <a
-                  key={href}
-                  href={href}
-                  className={`nav-item nav-link${isActive ? ' active' : ''}`}
-                  aria-current={isActive ? 'page' : undefined}
-                  onClick={closeMenu}
-                >
-                  {label}
-                </a>
-              );
-            })}
+            {items.map(({ label, to }) => (
+              <NavLink
+                key={to}
+                to={to}
+                end={to === '/'}
+                className={({ isActive }) =>
+                  `nav-item nav-link${isActive ? ' active' : ''}`
+                }
+                onClick={closeMenu}
+              >
+                {label}
+              </NavLink>
+            ))}
           </div>
           <a
             href={joinHref}
