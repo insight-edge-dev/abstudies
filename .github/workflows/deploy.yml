@@ -1,4 +1,4 @@
-name: Deploy to Hostinger
+name: Deploy to Hostinger via SSH
 
 on:
   push:
@@ -10,14 +10,13 @@ permissions:
 
 jobs:
   deploy:
-    name: Lint, Build & Deploy
     runs-on: ubuntu-latest
 
     steps:
       - name: 📥 Checkout Repository
         uses: actions/checkout@v4
 
-      - name: 🟢 Setup Node.js 22
+      - name: 🟢 Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -32,15 +31,16 @@ jobs:
       - name: 🏗️ Build Production
         run: npm run build
 
-      - name: 🚀 Deploy to Hostinger
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: 📂 Copy dist to Hostinger via SCP
+        uses: appleboy/scp-action@v0.1.7
         with:
-          server: ${{ secrets.HOSTINGER_HOST }}
+          host: ${{ secrets.HOSTINGER_HOST }}
           username: ${{ secrets.HOSTINGER_USERNAME }}
           password: ${{ secrets.HOSTINGER_PASSWORD }}
           port: ${{ secrets.HOSTINGER_PORT }}
-          protocol: ftp
-          local-dir: ./dist/
-          server-dir: ${{ secrets.HOSTINGER_REMOTE_PATH }}/
-          dangerous-clean-slate: true
-          state-name: .ftp-deploy-sync-state.json
+          source: "dist/*"
+          target: ${{ secrets.HOSTINGER_REMOTE_PATH }}
+          strip_components: 1
+
+      - name: ✅ Deployment Complete
+        run: echo "🚀 Website deployed successfully!"
