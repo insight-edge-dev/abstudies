@@ -9,7 +9,10 @@ function FooterLinkColumn({ title, links }) {
           const className = `text-white-50${index < links.length - 1 ? ' mb-2' : ''}`;
           const content = (
             <>
-              <i className="fa fa-angle-right mr-2" aria-hidden="true"></i>
+              <ChevronRight
+                className="footer__link-icon mr-2"
+                aria-hidden="true"
+              />
               {label}
             </>
           );
@@ -30,3 +33,4 @@ function FooterLinkColumn({ title, links }) {
 }
 
 export default FooterLinkColumn;
+import { ChevronRight } from 'lucide-react';

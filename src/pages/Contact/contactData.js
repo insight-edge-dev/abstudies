@@ -1,22 +1,24 @@
+import { Mail, MapPin, Phone } from 'lucide-react';
+
 import { mapEmbedUrl, siteContact } from '../../utils/siteContact.js';
 
 const contactItems = [
   {
     title: 'Our Location',
     value: siteContact.address,
-    icon: 'fa fa-2x fa-map-marker-alt text-white',
+    Icon: MapPin,
     iconBackground: 'bg-primary',
   },
   {
     title: 'Call Us',
     value: siteContact.phone,
-    icon: 'fa fa-2x fa-phone-alt text-white',
+    Icon: Phone,
     iconBackground: 'bg-secondary',
   },
   {
     title: 'Email Us',
     value: siteContact.email,
-    icon: 'fa fa-2x fa-envelope text-white',
+    Icon: Mail,
     iconBackground: 'bg-warning',
   },
 ];

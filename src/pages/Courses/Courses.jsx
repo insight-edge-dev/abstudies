@@ -1,4 +1,5 @@
 import CourseCard from '../../components/Courses/CourseCard.jsx';
+import MotionSection from '../../components/Motion/MotionSection.jsx';
 import SectionHeading from '../../components/SectionHeading/SectionHeading.jsx';
 import PageLayout from '../../layouts/PageLayout.jsx';
 import coursePageItems from './coursePageData.js';
@@ -6,7 +7,7 @@ import coursePageItems from './coursePageData.js';
 function CoursesPage() {
   return (
     <PageLayout title="Services">
-      <section className="container-fluid py-5">
+      <MotionSection className="container-fluid py-5">
         <div className="container py-5">
           <div className="row mx-0 justify-content-center">
             <div className="col-lg-8">
@@ -63,7 +64,7 @@ function CoursesPage() {
             </div>
           </div>
         </div>
-      </section>
+      </MotionSection>
     </PageLayout>
   );
 }

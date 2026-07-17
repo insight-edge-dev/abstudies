@@ -2,9 +2,9 @@ function FooterContact({ contacts, socials }) {
   return (
     <div className="col-md-4 mb-5">
       <h3 className="text-white mb-4">Get In Touch</h3>
-      {contacts.map(({ icon, text }) => (
-        <p key={text}>
-          <i className={`${icon} mr-2`} aria-hidden="true"></i>
+      {contacts.map(({ Icon, text }) => (
+        <p className="footer__contact-item" key={text}>
+          <Icon className="footer__contact-icon mr-2" aria-hidden="true" />
           {text}
         </p>
       ))}

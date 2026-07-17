@@ -1,42 +1,56 @@
-import { Route, Routes } from 'react-router';
+import { lazy, Suspense } from 'react';
+import { AnimatePresence } from 'framer-motion';
+import { Route, Routes, useLocation } from 'react-router';
 
-import About from './components/About/About.jsx';
-import Courses from './components/Courses/Courses.jsx';
-import Footer from './components/Footer/Footer.jsx';
-import Hero from './components/Hero/Hero.jsx';
-import Navbar from './components/Navbar/Navbar.jsx';
-import Teachers from './components/Teachers/Teachers.jsx';
-import AboutPage from './pages/About/About.jsx';
-import ContactPage from './pages/Contact/Contact.jsx';
-import CourseDetailsPage from './pages/CourseDetails/CourseDetails.jsx';
-import CoursesPage from './pages/Courses/Courses.jsx';
-import GalleryPage from './pages/Gallery/Gallery.jsx';
-import TeamPage from './pages/Team/Team.jsx';
+import PageTransition from './components/Motion/PageTransition.jsx';
 
-function HomePage() {
-  return (
-    <>
-      <Navbar />
-      <Hero />
-      <About />
-      <Courses />
-      <Teachers />
-      <Footer />
-    </>
-  );
-}
+const HomePage = lazy(() => import('./pages/Home/Home.jsx'));
+const AboutPage = lazy(() => import('./pages/About/About.jsx'));
+const ContactPage = lazy(() => import('./pages/Contact/Contact.jsx'));
+const CourseDetailsPage = lazy(
+  () => import('./pages/CourseDetails/CourseDetails.jsx'),
+);
+const CoursesPage = lazy(() => import('./pages/Courses/Courses.jsx'));
+const GalleryPage = lazy(() => import('./pages/Gallery/Gallery.jsx'));
+const TeamPage = lazy(() => import('./pages/Team/Team.jsx'));
+
+const routes = [
+  { path: '/', Component: HomePage },
+  { path: '/about', Component: AboutPage },
+  { path: '/courses', Component: CoursesPage },
+  { path: '/courses/:slug', Component: CourseDetailsPage },
+  { path: '/gallery', Component: GalleryPage },
+  { path: '/team', Component: TeamPage },
+  { path: '/contact', Component: ContactPage },
+];
 
 function App() {
+  const location = useLocation();
+
   return (
-    <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/about" element={<AboutPage />} />
-      <Route path="/courses" element={<CoursesPage />} />
-      <Route path="/courses/:slug" element={<CourseDetailsPage />} />
-      <Route path="/gallery" element={<GalleryPage />} />
-      <Route path="/team" element={<TeamPage />} />
-      <Route path="/contact" element={<ContactPage />} />
-    </Routes>
+    <Suspense
+      fallback={
+        <div className="route-loader" role="status" aria-live="polite">
+          <span className="sr-only">Loading page</span>
+        </div>
+      }
+    >
+      <AnimatePresence mode="wait" initial={false}>
+        <Routes location={location} key={location.pathname}>
+          {routes.map(({ path, Component }) => (
+            <Route
+              path={path}
+              element={
+                <PageTransition>
+                  <Component />
+                </PageTransition>
+              }
+              key={path}
+            />
+          ))}
+        </Routes>
+      </AnimatePresence>
+    </Suspense>
   );
 }
 

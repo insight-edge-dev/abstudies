@@ -1,4 +1,5 @@
 import SectionHeading from '../../components/SectionHeading/SectionHeading.jsx';
+import MotionSection from '../../components/Motion/MotionSection.jsx';
 import PageLayout from '../../layouts/PageLayout.jsx';
 import './Contact.css';
 import ContactForm from './ContactForm.jsx';
@@ -9,7 +10,7 @@ import contactItems, { mapEmbedUrl } from './contactData.js';
 function ContactPage() {
   return (
     <PageLayout title="Contact">
-      <section className="container-fluid py-5">
+      <MotionSection className="container-fluid py-5">
         <div className="container py-5">
           <div className="row align-items-center">
             <div className="col-lg-5 mb-5 mb-lg-0">
@@ -33,7 +34,7 @@ function ContactPage() {
             </div>
           </div>
         </div>
-      </section>
+      </MotionSection>
 
       <ContactMap src={mapEmbedUrl} />
     </PageLayout>

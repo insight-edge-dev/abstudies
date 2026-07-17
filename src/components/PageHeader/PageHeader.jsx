@@ -1,13 +1,9 @@
+import { ChevronRight } from 'lucide-react';
 import { Link } from 'react-router';
 
 import './PageHeader.css';
 
-function PageHeader({
-  title,
-  showBreadcrumb = true,
-  className = '',
-  children,
-}) {
+function PageHeader({ title, showBreadcrumb = true, className = '' }) {
   return (
     <header
       className={`page-header-section jumbotron jumbotron-fluid page-header position-relative overlay-bottom${className ? ` ${className}` : ''}`}
@@ -21,14 +17,13 @@ function PageHeader({
                 Home
               </Link>
             </p>
-            <i
-              className="fa fa-angle-double-right pt-1 px-3"
+            <ChevronRight
+              className="page-header__chevron mx-2"
               aria-hidden="true"
-            ></i>
+            />
             <p className="m-0 text-uppercase">{title}</p>
           </div>
         ) : null}
-        {children}
       </div>
     </header>
   );

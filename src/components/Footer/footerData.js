@@ -1,12 +1,15 @@
+import { Mail, MapPin, Phone } from 'lucide-react';
+
 import { siteContact } from '../../utils/siteContact.js';
+import courses from '../Courses/courseData.js';
 
 export const contactItems = [
   {
-    icon: 'fa fa-map-marker-alt',
+    Icon: MapPin,
     text: siteContact.address,
   },
-  { icon: 'fa fa-phone-alt', text: siteContact.phone },
-  { icon: 'fa fa-envelope', text: siteContact.email },
+  { Icon: Phone, text: siteContact.phone },
+  { Icon: Mail, text: siteContact.email },
 ];
 
 export const socialLinks = [
@@ -16,13 +19,10 @@ export const socialLinks = [
   { label: 'Instagram', href: '#', icon: 'fab fa-2x fa-instagram' },
 ];
 
-export const serviceLinks = [
-  { label: 'Web Design', href: '#' },
-  { label: 'Apps Design', href: '#' },
-  { label: 'Marketing', href: '#' },
-  { label: 'Research', href: '#' },
-  { label: 'SEO', href: '#' },
-];
+export const serviceLinks = courses.slice(0, 5).map(({ slug, title }) => ({
+  label: title,
+  href: `/courses/${slug}`,
+}));
 
 export const quickLinks = [
   { label: 'Privacy Policy', href: '#' },

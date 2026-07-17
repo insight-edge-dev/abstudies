@@ -1,13 +1,15 @@
 import { Link } from 'react-router';
 
+import logoImage from '../../assets/images/logo.jpeg';
+
 function FooterBrand() {
   return (
-    <div className="col-md-6 mb-5">
-      <Link to="/" className="navbar-brand">
-        <h1 className="mt-n2 text-uppercase text-white">
-          <i className="fa fa-book-reader mr-3" aria-hidden="true"></i>
-          ab studies
-        </h1>
+    <div className="col-12 mb-5">
+      <Link to="/" className="footer__brand navbar-brand">
+        <span className="footer__brand-logo" aria-hidden="true">
+          <img src={logoImage} alt="" />
+        </span>
+        <span className="footer__brand-title">AB Studies</span>
       </Link>
       <p className="m-0">
         Your Gateway to Excellence! A safe and joyful place for your lovely

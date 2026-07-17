@@ -32,7 +32,7 @@ function CourseDetailsPage() {
         mainClassName="container py-5"
       >
         <div className="row">
-          <div className="col-lg-8">
+          <div className="course-detail__content col-lg-8">
             <SectionHeading
               eyebrow="Course Detail"
               title={course.title}
@@ -41,22 +41,25 @@ function CourseDetailsPage() {
             />
 
             <img
-              className="img-fluid rounded mb-4"
+              className="course-detail__image img-fluid"
               src={course.image}
               alt={course.title}
+              decoding="async"
+              fetchPriority="high"
             />
 
             <CourseDescription {...course} />
             <RelatedCourses courses={relatedCourses} />
           </div>
 
-          <div className="col-lg-4">
+          <div className="course-detail__sidebar-column col-lg-4">
             <SidebarWidget title="Course Features">
               <CourseMeta items={course.meta} />
-              <h4 className="mt-4">
-                Price: <span>{course.price}</span>
-              </h4>
-              <Link to="/contact" className="btn btn-light btn-block mt-3">
+              <div className="course-price">
+                <span className="course-price__label">Price</span>
+                <strong>{course.price}</strong>
+              </div>
+              <Link to="/contact" className="btn btn-light btn-block">
                 Enroll Now
               </Link>
             </SidebarWidget>

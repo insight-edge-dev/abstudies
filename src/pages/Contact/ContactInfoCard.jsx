@@ -1,22 +1,31 @@
+import { motion, useReducedMotion } from 'framer-motion';
+
 function ContactInfoCard({
   title,
   value,
-  icon,
+  Icon,
   iconBackground,
   className = '',
 }) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <div
+    <motion.div
       className={`d-flex align-items-center${className ? ` ${className}` : ''}`}
+      whileHover={shouldReduceMotion ? undefined : { x: 3 }}
+      transition={{ duration: 0.2, ease: 'easeOut' }}
     >
       <div className={`btn-icon ${iconBackground} mr-4`}>
-        <i className={icon} aria-hidden="true"></i>
+        <Icon
+          className="contact-info-card__icon text-white"
+          aria-hidden="true"
+        />
       </div>
       <div className="mt-n1">
         <h4>{title}</h4>
         <p className="m-0">{value}</p>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

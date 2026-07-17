@@ -1,20 +1,28 @@
+import { motion, useReducedMotion } from 'framer-motion';
+
 function FounderCard({ name, role, description, image, accentClass }) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <div className="col-lg-6 mb-4">
-      <article
-        className={`about-founder-card ${accentClass} d-flex align-items-center bg-white p-4 shadow-sm rounded`}
+    <div className="col-lg-6 d-flex mb-4">
+      <motion.article
+        className={`about-founder-card ${accentClass} d-flex align-items-center bg-white p-4`}
+        whileHover={shouldReduceMotion ? undefined : { y: -4 }}
+        transition={{ duration: 0.25, ease: 'easeOut' }}
       >
         <img
           src={image}
           className="about-founder-card__image rounded-circle mr-4"
           alt={name}
+          loading="lazy"
+          decoding="async"
         />
         <div>
-          <h4 className="mb-1">{name}</h4>
+          <h3 className="h4 mb-1">{name}</h3>
           <h6 className="text-muted mb-2">{role}</h6>
           <p className="mb-0">{description}</p>
         </div>
-      </article>
+      </motion.article>
     </div>
   );
 }

@@ -8,12 +8,52 @@
 }
 
 .teachers-carousel__item {
+  display: flex;
   flex: 0 0 100%;
 }
 
 .teachers-carousel .owl-nav button {
   padding: 0;
   border: 0;
+}
+
+.team-item {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: #f8f9fa;
+  border: 1px solid rgba(40, 120, 235, 0.16);
+}
+
+.team-item .bg-light {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: 142px;
+}
+
+.team-item .h5 {
+  margin-bottom: var(--space-2) !important;
+  font-weight: 600;
+}
+
+.team-item p {
+  margin-bottom: var(--space-3) !important;
+  line-height: 1.6;
+}
+
+@media (max-width: 575.98px) {
+  .teachers-carousel {
+    padding: 0 14px;
+  }
+
+  .team-item .p-4 {
+    padding: 1.35rem !important;
+  }
 }
 
 @media (min-width: 768px) {

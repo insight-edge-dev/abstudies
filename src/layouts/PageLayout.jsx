@@ -5,7 +5,6 @@ import PageHeader from '../components/PageHeader/PageHeader.jsx';
 function PageLayout({
   title,
   children,
-  headerContent,
   headerClassName = '',
   mainClassName = '',
   showBreadcrumb = true,
@@ -17,9 +16,7 @@ function PageLayout({
         title={title}
         showBreadcrumb={showBreadcrumb}
         className={headerClassName}
-      >
-        {headerContent}
-      </PageHeader>
+      />
       <main className={mainClassName}>{children}</main>
       <Footer />
     </>

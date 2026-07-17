@@ -14,6 +14,97 @@
   height: 60px;
 }
 
+.courses-item,
+.courses-list-item {
+  border-radius: var(--card-radius);
+}
+
+.courses-item .courses-text .h4,
+.courses-list-item .courses-text .h4 {
+  max-width: 24ch;
+  margin-bottom: var(--space-2);
+  font-weight: 600;
+}
+
+.courses-signup__control.btn {
+  font-size: var(--font-size-base);
+}
+
+.courses-signup__label {
+  display: block;
+  margin-bottom: var(--space-2);
+  color: #120f2d;
+  font-family: 'Jost', sans-serif;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.courses-signup__input.is-invalid,
+.courses-signup__control.is-invalid {
+  border: 1px solid #dc3545 !important;
+}
+
+.courses-signup__error {
+  margin: var(--space-2) 0 0;
+  color: #b02a37;
+  font-size: var(--font-size-xs);
+  line-height: 1.45;
+}
+
+.courses-signup__submit {
+  display: inline-flex;
+  gap: var(--space-2);
+  align-items: center;
+  justify-content: center;
+}
+
+.courses-signup__submit:disabled {
+  cursor: wait;
+}
+
+.courses-signup__spinner {
+  width: 18px;
+  height: 18px;
+  animation: courses-signup-spin 0.8s linear infinite;
+}
+
+@keyframes courses-signup-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 575.98px) {
+  .courses-carousel__item .courses-text h4 {
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+  }
+
+  .courses-carousel__item .courses-text .h4 {
+    font-size: var(--font-size-lg);
+  }
+
+  .courses-carousel + .bg-image .bg-white {
+    padding: 1.5rem !important;
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important;
+    border-radius: 16px;
+  }
+
+  .courses-carousel + .bg-image h2 {
+    font-size: 1.75rem;
+  }
+
+  .courses-signup__input {
+    padding: 22px 16px;
+  }
+
+  .courses-signup__label--spacer {
+    display: none;
+  }
+}
+
 @media (min-width: 576px) {
   .courses-carousel__item {
     flex-basis: 50%;

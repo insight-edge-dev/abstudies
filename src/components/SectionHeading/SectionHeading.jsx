@@ -1,3 +1,5 @@
+import { motion, useReducedMotion } from 'framer-motion';
+
 function SectionHeading({
   eyebrow,
   title,
@@ -6,14 +8,25 @@ function SectionHeading({
   eyebrowClassName = 'd-inline-block position-relative text-secondary text-uppercase pb-2',
   descriptionClassName = '',
 }) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <div className={`section-title${className ? ` ${className}` : ''}`}>
+    <motion.div
+      className={`section-title${className ? ` ${className}` : ''}`}
+      initial={{
+        opacity: shouldReduceMotion ? 1 : 0,
+        y: shouldReduceMotion ? 0 : 18,
+      }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: shouldReduceMotion ? 0 : 0.45, ease: 'easeOut' }}
+    >
       <h6 className={eyebrowClassName}>{eyebrow}</h6>
-      <h1 className="display-4">{title}</h1>
+      <h2 className="display-4">{title}</h2>
       {description ? (
         <p className={descriptionClassName}>{description}</p>
       ) : null}
-    </div>
+    </motion.div>
   );
 }
 

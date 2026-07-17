@@ -8,7 +8,6 @@ import {
   serviceLinks,
   socialLinks,
 } from './footerData.js';
-import NewsletterSignup from './NewsletterSignup.jsx';
 import './Footer.css';
 
 function Footer() {
@@ -18,11 +17,10 @@ function Footer() {
         <div className="container mt-5 pt-5">
           <div className="row">
             <FooterBrand />
-            <NewsletterSignup />
           </div>
           <div className="row">
             <FooterContact contacts={contactItems} socials={socialLinks} />
-            <FooterLinkColumn title="Our Services" links={serviceLinks} />
+            <FooterLinkColumn title="Our Courses" links={serviceLinks} />
             <FooterLinkColumn title="Quick Links" links={quickLinks} />
           </div>
         </div>

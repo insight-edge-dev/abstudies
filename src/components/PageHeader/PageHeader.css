@@ -1,3 +1,44 @@
 .page-header-section {
   margin-bottom: 90px;
 }
+
+.page-header__chevron {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+}
+
+.page-header-section .display-1 {
+  margin-bottom: var(--space-4);
+  font-size: clamp(3.25rem, 7vw, 5.5rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+.page-header-section .d-inline-flex {
+  gap: var(--space-1);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 575.98px) {
+  .page-header-section {
+    margin-bottom: 48px;
+  }
+
+  .page-header-section .container {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+
+  .page-header-section .display-1 {
+    font-size: clamp(2.5rem, 12vw, 3rem);
+    line-height: 1.1;
+  }
+
+  .page-header-section .d-inline-flex {
+    margin-bottom: 2rem !important;
+  }
+}

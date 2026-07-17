@@ -5,7 +5,7 @@ import './Gallery.css';
 
 function Gallery({ items = galleryItems }) {
   return (
-    <section className="container-fluid py-5">
+    <MotionSection className="container-fluid py-5">
       <div className="container py-5">
         <SectionHeading
           eyebrow={
@@ -27,8 +27,9 @@ function Gallery({ items = galleryItems }) {
           ))}
         </div>
       </div>
-    </section>
+    </MotionSection>
   );
 }
 
 export default Gallery;
+import MotionSection from '../Motion/MotionSection.jsx';

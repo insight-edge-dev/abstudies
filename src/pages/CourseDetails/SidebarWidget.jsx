@@ -1,7 +1,7 @@
 function SidebarWidget({ title, children, className = '' }) {
   return (
     <aside
-      className={`bg-primary text-white p-4 rounded${className ? ` ${className}` : ''}`}
+      className={`course-sidebar bg-primary text-white${className ? ` ${className}` : ''}`}
       aria-labelledby="course-features-title"
     >
       <h3 className="mb-4" id="course-features-title">

@@ -1,24 +1,25 @@
-function CourseDescription({
-  description,
-  subheading,
-  highlights,
-  numberedHighlights = false,
-}) {
+import { CheckCircle2 } from 'lucide-react';
+
+function CourseDescription({ description, subheading, highlights }) {
   return (
-    <div className="mb-5">
+    <div className="course-description">
       {description.map((paragraph) => (
-        <p key={paragraph}>{paragraph}</p>
+        <p className="course-description__paragraph" key={paragraph}>
+          {paragraph}
+        </p>
       ))}
-      {subheading ? <strong>{subheading}</strong> : null}
+      {subheading ? (
+        <h2 className="course-description__subheading">{subheading}</h2>
+      ) : null}
       {highlights.length ? (
-        <div className={subheading ? 'mt-4' : ''}>
-          {highlights.map((highlight, index) => (
-            <div key={highlight}>
-              {numberedHighlights ? `${index + 1}. ` : '• '}
-              {highlight}
-            </div>
+        <ul className="course-description__highlights">
+          {highlights.map((highlight) => (
+            <li key={highlight}>
+              <CheckCircle2 aria-hidden="true" />
+              <span>{highlight}</span>
+            </li>
           ))}
-        </div>
+        </ul>
       ) : null}
     </div>
   );

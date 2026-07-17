@@ -1,3 +1,5 @@
+import { Award, BookOpen, GraduationCap } from 'lucide-react';
+
 import founderOneImage from '../../assets/images/team-2.png';
 import founderTwoImage from '../../assets/images/team-1.png';
 
@@ -53,20 +55,20 @@ export const features = [
     description:
       'Our experienced and dedicated faculty ensure every student receives clear guidance, strong fundamentals, and personalized support.',
     backgroundClass: 'bg-primary',
-    icon: 'fa fa-2x fa-graduation-cap text-white',
+    Icon: GraduationCap,
   },
   {
     title: 'Safe & Supportive Environment',
     description:
       ' We provide a joyful, secure, and motivating atmosphere where students feel confident, curious, and ready to learn everyday.',
     backgroundClass: 'bg-secondary',
-    icon: 'fa fa-2x fa-certificate text-white',
+    Icon: Award,
   },
   {
     title: 'Activity-Based Learning',
     description:
       'Hands-on activities, creative sessions, and modern teaching methods help children develop skills beyond academics.',
     backgroundClass: 'bg-warning',
-    icon: 'fa fa-2x fa-book-reader text-white',
+    Icon: BookOpen,
   },
 ];

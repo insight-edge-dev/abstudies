@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
+import { useReducedMotion } from 'framer-motion';
 
+import MotionSection from '../Motion/MotionSection.jsx';
 import SectionHeading from '../SectionHeading/SectionHeading.jsx';
 import TeacherCard from './TeacherCard.jsx';
 import teachers from './teacherData.js';
@@ -13,6 +15,7 @@ function Teachers({ items = teachers }) {
   const [visibleTeachers, setVisibleTeachers] = useState(items);
   const trackRef = useRef(null);
   const animationRef = useRef(null);
+  const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
     setVisibleTeachers(items);
@@ -90,7 +93,7 @@ function Teachers({ items = teachers }) {
   }, []);
 
   useEffect(() => {
-    if (visibleTeachers.length < 2) return undefined;
+    if (visibleTeachers.length < 2 || shouldReduceMotion) return undefined;
 
     const autoplayId = window.setInterval(showNextTeacher, 5000);
 
@@ -99,10 +102,10 @@ function Teachers({ items = teachers }) {
       animationRef.current?.cancel();
       animationRef.current = null;
     };
-  }, [showNextTeacher, visibleTeachers.length]);
+  }, [shouldReduceMotion, showNextTeacher, visibleTeachers.length]);
 
   return (
-    <section className="container-fluid py-5">
+    <MotionSection className="container-fluid py-5">
       <div className="container py-5">
         <SectionHeading
           eyebrow="Instructors"
@@ -144,7 +147,7 @@ function Teachers({ items = teachers }) {
           </div>
         </div>
       </div>
-    </section>
+    </MotionSection>
   );
 }
 

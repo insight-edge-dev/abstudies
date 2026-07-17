@@ -2,6 +2,7 @@ import aboutImage from '../../assets/images/about.jpg';
 import featureImage from '../../assets/images/feature.jpg';
 import SectionHeading from '../../components/SectionHeading/SectionHeading.jsx';
 import StatCard from '../../components/About/StatCard.jsx';
+import MotionSection from '../../components/Motion/MotionSection.jsx';
 import PageLayout from '../../layouts/PageLayout.jsx';
 import FeatureItem from './FeatureItem.jsx';
 import FounderCard from './FounderCard.jsx';
@@ -11,7 +12,7 @@ import './About.css';
 function AboutPage() {
   return (
     <PageLayout title="About">
-      <section className="container-fluid py-5">
+      <MotionSection className="container-fluid py-5">
         <div className="container py-5">
           <div className="row">
             <div className="about-page__image-column col-lg-5 mb-5 mb-lg-0">
@@ -20,6 +21,8 @@ function AboutPage() {
                   className="about-page__image position-absolute w-100 h-100"
                   src={aboutImage}
                   alt="Students learning at AB Studies"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -29,7 +32,7 @@ function AboutPage() {
                 title="A trusted center for education and skill development."
                 className="position-relative mb-4"
               />
-              <p>
+              <p className="content-copy">
                 {' '}
                 Welcome to <strong> AB Studies </strong> where we believe
                 education is the perfect blend of &quot;Intelligence Plus
@@ -45,9 +48,9 @@ function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </MotionSection>
 
-      <section className="container-fluid py-5 bg-light">
+      <MotionSection className="container-fluid py-5 bg-light">
         <div className="container py-5">
           <SectionHeading
             eyebrow="Our Founders"
@@ -63,9 +66,9 @@ function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </MotionSection>
 
-      <section className="container-fluid py-5">
+      <MotionSection className="container-fluid py-5">
         <div className="container py-5">
           <div className="row">
             <div className="col-lg-7 mb-5 mb-lg-0">
@@ -74,7 +77,7 @@ function AboutPage() {
                 title="Why You Should Start Learning with Us?"
                 className="position-relative mb-4"
               />
-              <p className="mb-4 pb-2">
+              <p className="content-copy mb-4 pb-2">
                 A trusted place for students to learn, grow, and build essential
                 skills for a successful future.
               </p>
@@ -92,12 +95,14 @@ function AboutPage() {
                   className="about-page__image position-absolute w-100 h-100"
                   src={featureImage}
                   alt="Activity-based learning at AB Studies"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </MotionSection>
     </PageLayout>
   );
 }

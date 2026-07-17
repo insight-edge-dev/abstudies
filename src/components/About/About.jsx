@@ -1,4 +1,6 @@
 import aboutImage from '../../assets/images/about.jpg';
+import MotionSection from '../Motion/MotionSection.jsx';
+import SectionHeading from '../SectionHeading/SectionHeading.jsx';
 import './About.css';
 
 import aboutStats from './aboutStats.js';
@@ -12,7 +14,7 @@ function About({
   stats = aboutStats,
 }) {
   return (
-    <section className="container-fluid py-5">
+    <MotionSection className="container-fluid py-5">
       <div className="container py-5">
         <div className="row">
           <div className="about__image-column col-lg-5 mb-5 mb-lg-0">
@@ -21,17 +23,18 @@ function About({
                 className="about__image position-absolute w-100 h-100"
                 src={imageSrc}
                 alt={imageAlt}
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
           <div className="col-lg-7">
-            <div className="section-title position-relative mb-4">
-              <h6 className="d-inline-block position-relative text-secondary text-uppercase pb-2">
-                {eyebrow}
-              </h6>
-              <h1 className="display-4">{title}</h1>
-            </div>
-            <p>
+            <SectionHeading
+              eyebrow={eyebrow}
+              title={title}
+              className="position-relative mb-4"
+            />
+            <p className="content-copy">
               {' '}
               Dedicated to nurturing young minds, AB STUDIES offer a variety of
               educational and creative programs including abacus training,
@@ -51,7 +54,7 @@ function About({
           </div>
         </div>
       </div>
-    </section>
+    </MotionSection>
   );
 }
 
