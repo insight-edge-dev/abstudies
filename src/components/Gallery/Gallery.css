@@ -1,0 +1,24 @@
+.gallery__eyebrow {
+  padding-bottom: 8px;
+}
+
+.gallery__eyebrow-accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #ff4d4d;
+}
+
+.gallery__description {
+  max-width: 700px;
+}
+
+.gallery-item__image {
+  height: 260px;
+  object-fit: cover;
+  border: 4px solid #e5edff;
+  border-radius: 18px;
+}

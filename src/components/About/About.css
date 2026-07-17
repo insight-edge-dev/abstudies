@@ -1,0 +1,9 @@
+.about__image-column {
+  min-height: 500px;
+}
+
+.about__image {
+  object-fit: cover;
+  border: 4px solid #e5edff;
+  border-radius: 18px;
+}

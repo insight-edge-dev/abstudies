@@ -1,0 +1,31 @@
+@import '../../../legacy/lib/owlcarousel/assets/owl.carousel.css';
+
+.teachers-carousel {
+  padding: 0 30px;
+}
+
+.teachers-carousel__track {
+  display: flex;
+  gap: 30px;
+}
+
+.teachers-carousel__item {
+  flex: 0 0 100%;
+}
+
+.teachers-carousel .owl-nav button {
+  padding: 0;
+  border: 0;
+}
+
+@media (min-width: 768px) {
+  .teachers-carousel__item {
+    flex-basis: calc((100% - 30px) / 2);
+  }
+}
+
+@media (min-width: 992px) {
+  .teachers-carousel__item {
+    flex-basis: calc((100% - 60px) / 3);
+  }
+}

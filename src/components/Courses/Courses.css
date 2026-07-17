@@ -1,0 +1,35 @@
+@import '../../../legacy/lib/owlcarousel/assets/owl.carousel.css';
+
+.courses-carousel__track {
+  display: flex;
+}
+
+.courses-carousel__item {
+  flex: 0 0 100%;
+}
+
+.courses-signup__input {
+  padding: 30px 20px;
+}
+
+.courses-signup__control {
+  height: 60px;
+}
+
+@media (min-width: 576px) {
+  .courses-carousel__item {
+    flex-basis: 50%;
+  }
+}
+
+@media (min-width: 768px) {
+  .courses-carousel__item {
+    flex-basis: 33.333333%;
+  }
+}
+
+@media (min-width: 992px) {
+  .courses-carousel__item {
+    flex-basis: 25%;
+  }
+}

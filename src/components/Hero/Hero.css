@@ -1,0 +1,19 @@
+.hero {
+  margin-bottom: 90px;
+}
+
+.hero__description {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.hero__cta {
+  padding: 10px 28px;
+  border-radius: 50px;
+}
+
+.hero__stars {
+  margin-right: 8px;
+  color: #f4c150;
+  font-size: 20px;
+}
